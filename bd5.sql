@@ -1,6 +1,6 @@
 create database pizzaria;
 use pizzaria;
-
+-- Criando tabelas
 create table tiposocios(
 	idtiposocios int primary key auto_increment not null,
     tipo_socio varchar(45)
@@ -47,7 +47,7 @@ create table itens(
     foreign key (id_pedidos) references pedidos (idpedidos),
 	foreign key (id_pizzas) references pizzas (idpizzas)
     );
-    
+    -- Inserir dados
     insert into tiposocios(tipo_socio)
     values('Gold'),
 		   ('Silver'),
@@ -65,7 +65,7 @@ create table itens(
 		  (102, '2026-03-02', 40.00),
           (103, '2026-03-03', 150.00),
           (104, '2026-03-04', 52.50);
-          
+    -- Visualizações das tabelas 
 select idpizzas, sabor, preco from pizzas;		
 select idpizzas, sabor, quantidade_pizzas from pizzas where quantidade_pizzas < quantidade_criticas ;
 select idpedidos, data_pedido, valor_total from pedidos order by valor_total desc;
